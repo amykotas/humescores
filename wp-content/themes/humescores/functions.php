@@ -79,14 +79,14 @@ function humescores_fonts_url() {
 
 	/*
 	 * Translators: If there are characters in your language that are not
-	 * supported by Source Sans Pro and PT Serif, translate this to 'off'. Do not translate
+	 * supported by Open Sans and Pompiere, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
 	$source_sans_pro = _x( 'on', 'Source Sans Pro font: on or off', 'humescores' );
 	$pt_serif = _x( 'on', 'PT Serif font: on or off', 'humescores' );
 
 	$font_families = array();
-	
+
 	if ( 'off' !== $source_sans_pro ) {
 		$font_families[] = 'Source Sans Pro:400,400i,700,900';
 	}
