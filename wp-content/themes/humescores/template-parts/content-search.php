@@ -1,10 +1,10 @@
 <?php
 /**
- * Template part for displaying results in search pages
+ * Template part for displaying results in search pages.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package humescores
+ * @package Humescores
  */
 
 ?>
@@ -27,4 +27,4 @@
 	<footer class="entry-footer">
 		<?php humescores_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+</article><!-- #post-## -->

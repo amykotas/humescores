@@ -1,10 +1,10 @@
 <?php
 /**
- * The template for displaying all single posts
+ * The template for displaying all single posts.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package humescores
+ * @package Humescores
  */
 
 get_header(); ?>

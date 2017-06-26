@@ -1,8 +1,8 @@
 <?php
 /**
- * humescores Theme Customizer
+ * Humescores Theme Customizer.
  *
- * @package humescores
+ * @package Humescores
  */
 
 /**

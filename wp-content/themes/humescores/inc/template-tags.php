@@ -1,10 +1,10 @@
 <?php
 /**
- * Custom template tags for this theme
+ * Custom template tags for this theme.
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package humescores
+ * @package Humescores
  */
 
 if ( ! function_exists( 'humescores_posted_on' ) ) :
@@ -25,13 +25,11 @@ function humescores_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		/* translators: %s: post date. */
 		esc_html_x( 'Posted on %s', 'post date', 'humescores' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
 	$byline = sprintf(
-		/* translators: %s: post author. */
 		esc_html_x( 'by %s', 'post author', 'humescores' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
@@ -51,49 +49,28 @@ function humescores_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'humescores' ) );
 		if ( $categories_list && humescores_categorized_blog() ) {
-			/* translators: 1: list of categories. */
 			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'humescores' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 		}
 
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'humescores' ) );
+		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'humescores' ) );
 		if ( $tags_list ) {
-			/* translators: 1: list of tags. */
 			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'humescores' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
-		comments_popup_link(
-			sprintf(
-				wp_kses(
-					/* translators: %s: post title */
-					__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'humescores' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			)
-		);
+		/* translators: %s: post title */
+		comments_popup_link( sprintf( wp_kses( __( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'humescores' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
 		echo '</span>';
 	}
 
 	edit_post_link(
 		sprintf(
-			wp_kses(
-				/* translators: %s: Name of current post. Only visible to screen readers */
-				__( 'Edit <span class="screen-reader-text">%s</span>', 'humescores' ),
-				array(
-					'span' => array(
-						'class' => array(),
-					),
-				)
-			),
-			get_the_title()
+			/* translators: %s: Name of current post */
+			esc_html__( 'Edit %s', 'humescores' ),
+			the_title( '<span class="screen-reader-text">"', '"</span>', false )
 		),
 		'<span class="edit-link">',
 		'</span>'
@@ -107,8 +84,7 @@ endif;
  * @return bool
  */
 function humescores_categorized_blog() {
-	$all_the_cool_cats = get_transient( 'humescores_categories' );
-	if ( false === $all_the_cool_cats ) {
+	if ( false === ( $all_the_cool_cats = get_transient( 'humescores_categories' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array(
 			'fields'     => 'ids',
@@ -123,7 +99,7 @@ function humescores_categorized_blog() {
 		set_transient( 'humescores_categories', $all_the_cool_cats );
 	}
 
-	if ( $all_the_cool_cats > 1 || is_preview() ) {
+	if ( $all_the_cool_cats > 1 ) {
 		// This blog has more than 1 category so humescores_categorized_blog should return true.
 		return true;
 	} else {

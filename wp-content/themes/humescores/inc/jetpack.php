@@ -1,10 +1,10 @@
 <?php
 /**
- * Jetpack Compatibility File
+ * Jetpack Compatibility File.
  *
  * @link https://jetpack.com/
  *
- * @package humescores
+ * @package Humescores
  */
 
 /**
