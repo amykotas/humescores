@@ -21,7 +21,17 @@
 }
 
 .site-branding {
+	display: flex;
 	min-height: 65px;
+}
+
+.custom-logo-link {
+	margin-right: 1em;
+	img {
+		display: block;
+		height: 65px; /* Same as min-height for .site-branding! */
+		width: auto; /* ✳️ CHANGE TO 65px??? looks messed up */
+	}
 }
 
 .site-title {
