@@ -30,8 +30,15 @@
 	img {
 		display: block;
 		height: 65px; /* Same as min-height for .site-branding! */
-		width: auto; /* ✳️ CHANGE TO 65px??? looks messed up */
+		width: auto; /* ✳️ CHANGE TO 65px??? looks messed up once browser is >= 900px. Media query issue, but what? */
 	}
+}
+
+.site-branding__text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 65px;
 }
 
 .site-title {
@@ -67,6 +74,7 @@
 
 	.site-branding {
 		width: 35%;
+		flex: 1 0 auto;
 	}
 
 	.site-navigation {
