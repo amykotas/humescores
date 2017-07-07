@@ -30,13 +30,12 @@
 		</a>
 	</figure><!-- .header-image -->
 	<?php endif; // End header image check. ?>
-
+	
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
-
+			
 			<?php the_custom_logo(); ?>
 			<div class="site-branding__text">
-
 			<?php
 			if ( is_front_page() && is_home() ) : ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
@@ -50,7 +49,7 @@
 				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
 			<?php
 			endif; ?>
-			</div> <!-- .site-branding__text -->
+			</div><!-- .site-branding__text -->
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">

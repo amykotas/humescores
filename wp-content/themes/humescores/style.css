@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*!
 Theme Name: Humescores
 Theme URI: https://github.com/mor10/humescores/
@@ -681,7 +680,7 @@ a:hover, a:active {
 ## Header
 --------------------------------------------------------------*/
 .header-image {
-	max-height: 65vh;
+	max-height: 60vh;
 	overflow: hidden;
 }
 
@@ -718,9 +717,7 @@ a:hover, a:active {
 .custom-logo-link img {
 	display: block;
 	height: 65px;
-	/* Same as min-height for .site-branding! */
 	width: auto;
-	/* ✳️ CHANGE TO 65px??? looks messed up once browser is >= 900px. Media query issue, but what? */
 }
 
 .site-branding__text {
@@ -781,7 +778,7 @@ a:hover, a:active {
 	}
 }
 
-/* 
+/*
 Header Menu
 */
 .main-navigation {
@@ -845,7 +842,7 @@ Header Menu
 }
 
 .main-navigation .menu-item-has-children,
-.main-navigation .page-item-has-children {
+.main-navigation .page_item_has_children {
 	min-width: 218px;
 }
 
@@ -877,7 +874,7 @@ button.dropdown-toggle {
 	border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* Toggle small menu and sub-menus on */
+/* Toggle small menu and children on */
 .toggled-on ul,
 .sub-menu.toggled-on {
 	display: block;
@@ -926,6 +923,13 @@ button.dropdown-toggle {
 		    -ms-flex-pack: end;
 		        justify-content: flex-end;
 		padding-top: 0;
+		/* If you want dropdowns to open on hover, uncomment this: */
+		/*
+			li:hover > ul,
+				li:focus > ul {
+				display: block;
+			}
+			*/
 	}
 }
 
