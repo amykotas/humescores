@@ -1,4 +1,4 @@
-/* global humescoresScreenReaderText */
+ /* global humescoresScreenReaderText */
 /**
  * Theme functions file.
  *
@@ -6,6 +6,7 @@
  */
 
 (function( $ ) {
+
 	var masthead, menuToggle, siteNavigation;
 
 	function initMainNavigation( container ) {
