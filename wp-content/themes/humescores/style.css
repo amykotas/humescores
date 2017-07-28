@@ -361,6 +361,16 @@ big {
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
+/* html, body suggestion from Latasha Hussey to fix my spacing problem... */
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	overflow-x: hidden;
+}
+
+/* slight improvement, was squished below 345px and now it's under 300 */
 html {
 	box-sizing: border-box;
 }
@@ -526,7 +536,7 @@ a {
 }
 
 a:visited {
-	color: purple;
+	color: PaleVioletRed;
 }
 
 a:hover, a:focus, a:active {
