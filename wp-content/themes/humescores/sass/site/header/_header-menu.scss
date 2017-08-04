@@ -79,7 +79,7 @@ button.dropdown-toggle {
 	right: 0;
 	border: none;
 	background: inherit;
-	color: white;
+	color: #2d3339;
 	line-height: 1.5em;
 	padding: .4em 1em .4em .5em;
 }
@@ -93,7 +93,7 @@ button.dropdown-toggle {
 	padding: .6em .8em;
 	font-size: 80%;
 	text-transform: uppercase;
-	color: white;
+	color: #2d3339;
 	border: 1px solid hsla(0, 0%, 100%, .3);
 }
 
@@ -145,7 +145,6 @@ button.dropdown-toggle {
 		}
 
 	}
-
 }
 
 @media screen and (min-width: $query__medium) {
